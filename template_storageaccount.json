@@ -3,28 +3,28 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "type": "string",
-            "defaultValue": "westeurope"
+            "type": "string"
+            
         },
         "storageAccountName": {
-            "type": "string",
-            "defaultValue": "mysqtorageaccount01"
+            "type": "string"
+            
         },
         "accountType": {
-            "type": "string",
-            "defaultValue": "Standard_RAGRS"
+            "type": "string"
+           
         },
         "kind": {
-            "type": "string",
-            "defaultValue": "StorageV2"
+            "type": "string"
+            
         },
         "accessTier": {
-            "type": "string",
-            "defaultValue": "Hot"
+            "type": "string"
+            
         },
         "supportsHttpsTrafficOnly": {
-            "type": "bool",
-            "defaultValue": true
+            "type": "bool"
+            
         }
     },
     "variables": {},
