@@ -1,0 +1,41 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+      {
+         "apiVersion": "2017-05-10",
+         "name": "linkedTemplatestorageaccount",
+         "type": "Microsoft.Resources/deployments",
+         "properties": {
+           "mode": "Incremental",
+           "templateLink": {
+              "uri":"https://raw.githubusercontent.com/xelex2007/azure/master/template_storageaccount.json",
+              "contentVersion":"1.0.0.0"
+           },
+           "parametersLink": {
+              "uri":"https://raw.githubusercontent.com/xelex2007/azure/master/parameters_storageaccount.json",
+              "contentVersion":"1.0.0.0"
+           }
+         }
+      },
+      {
+        "apiVersion": "2017-05-10",
+        "name": "linkedTemplatevnet",
+        "type": "Microsoft.Resources/deployments",
+        "properties": {
+          "mode": "Incremental",
+          "templateLink": {
+             "uri":"https://raw.githubusercontent.com/xelex2007/azure/master/template_vnet.json",
+             "contentVersion":"1.0.0.0"
+          },
+          "parametersLink": {
+             "uri":"https://raw.githubusercontent.com/xelex2007/azure/master/parameters_vnet.json",
+             "contentVersion":"1.0.0.0"
+          }
+        }
+     }
+    ]
+    
+}
