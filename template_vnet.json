@@ -1,0 +1,72 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string",
+            "defaultValue": "myvnet01"
+        },
+        "resourceGroup": {
+            "type": "string",
+            "defaultValue": "test-rg01"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "westeurope"
+        },
+        "addressPrefix": {
+            "type": "string",
+            "defaultValue": "10.0.0.0/16"
+        },
+        "subnetNameBack": {
+            "type": "string",
+            "defaultValue": "back-end"
+        },
+        "subnetNameFront": {
+            "type": "string",
+            "defaultValue": "front-end"
+        },
+        "subnetAddressPrefixFront": {
+            "type": "string",
+            "defaultValue": "10.0.0.0/24"
+        },
+        "subnetAddressPrefixBack": {
+            "type": "string",
+            "defaultValue": "10.0.1.0/24"
+        },
+        "enableDdosProtection": {
+            "type": "bool", 
+            "defaultValue": false
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-08-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "[parameters('location')]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('addressPrefix')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[parameters('subnetNameFront')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnetAddressPrefixFront')]"
+                        }
+                    },
+                    {
+                        "name": "[parameters('subnetNameBack')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnetAddressPrefixBack')]"
+                        }
+                    }
+                ],
+                "enableDdosProtection": "[parameters('enableDdosProtection')]"
+            }
+        }
+    ]
+}
