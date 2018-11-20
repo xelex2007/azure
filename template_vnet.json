@@ -3,40 +3,40 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "type": "string",
-            "defaultValue": "myvnet01"
+            "type": "string"
+            
         },
         "resourceGroup": {
-            "type": "string",
-            "defaultValue": "test-rg01"
+            "type": "string"
+            
         },
         "location": {
-            "type": "string",
-            "defaultValue": "westeurope"
+            "type": "string"
+           
         },
         "addressPrefix": {
-            "type": "string",
-            "defaultValue": "10.0.0.0/16"
+            "type": "string"
+            
         },
         "subnetNameBack": {
-            "type": "string",
-            "defaultValue": "back-end"
+            "type": "string"
+            
         },
         "subnetNameFront": {
-            "type": "string",
-            "defaultValue": "front-end"
+            "type": "string"
+            
         },
         "subnetAddressPrefixFront": {
-            "type": "string",
-            "defaultValue": "10.0.0.0/24"
+            "type": "string"
+            
         },
         "subnetAddressPrefixBack": {
-            "type": "string",
-            "defaultValue": "10.0.1.0/24"
+            "type": "string"
+           
         },
         "enableDdosProtection": {
-            "type": "bool", 
-            "defaultValue": false
+            "type": "bool"
+            
         }
     },
     "resources": [
